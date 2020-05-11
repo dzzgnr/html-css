@@ -1,0 +1,50 @@
+@import "mainStyle.css";
+
+.arrow-scroll {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+.arrow-scroll:before {
+    content: '';
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-left: 26px solid #819FF7;
+    border-bottom: 26px solid #819FF7;
+    transform: translate(26px, 106px) rotate(-45deg);
+    animation: arrow-scroll 3s linear infinite;
+}
+.arrow-scroll:after {
+    content: '';
+    position: absolute;
+    box-sizing: border-box;    
+    width: 100%;
+    height: 100%;
+    border-left: 26px solid #819FF7;
+    border-bottom: 26px solid #819FF7;
+    transform: translate(53px, 0px) rotate(-45deg);
+    animation: arrow-scroll 3s linear infinite -1.5s;
+}
+ 
+@keyframes arrow-scroll {
+    0% {
+        opacity: 0;
+        transform: translate(-13px, -53px) rotate(-45deg);
+    }
+    10%, 90% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;  
+        border-left: 26px solid #819FF7;
+        border-bottom: 26px solid #819FF7;
+        transform: translate(-13px, 0px) rotate(-45deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-13px, 53px) rotate(-45deg);
+    }
+}
